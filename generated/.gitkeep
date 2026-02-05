@@ -1,0 +1,2 @@
+# This directory will contain auto-generated GraphQL types
+# Run `pnpm run codegen` to generate graphql.ts

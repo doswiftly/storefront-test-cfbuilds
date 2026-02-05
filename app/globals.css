@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+@theme {
+  /* Light mode colors (default) */
+  --color-primary: rgb(59 130 246); /* blue-500 */
+  --color-primary-foreground: rgb(255 255 255);
+  --color-secondary: rgb(100 116 139); /* slate-500 */
+  --color-secondary-foreground: rgb(255 255 255);
+  --color-accent: rgb(249 115 22); /* orange-500 */
+  --color-accent-foreground: rgb(255 255 255);
+  --color-background: rgb(255 255 255);
+  --color-foreground: rgb(15 23 42); /* slate-900 */
+  --color-muted: rgb(241 245 249); /* slate-100 */
+  --color-muted-foreground: rgb(100 116 139); /* slate-500 */
+  --color-border: rgb(226 232 240); /* slate-200 */
+  --color-ring: rgb(59 130 246); /* blue-500 */
+  --color-card: rgb(255 255 255);
+  --color-card-foreground: rgb(15 23 42);
+  --color-destructive: rgb(239 68 68); /* red-500 */
+  --color-destructive-foreground: rgb(255 255 255);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    transition: background-color 200ms, color 200ms;
+  }
+
+  /* Dark mode colors */
+  .dark {
+    --color-primary: rgb(96 165 250); /* blue-400 */
+    --color-primary-foreground: rgb(15 23 42); /* slate-900 */
+    --color-secondary: rgb(148 163 184); /* slate-400 */
+    --color-secondary-foreground: rgb(15 23 42);
+    --color-accent: rgb(251 146 60); /* orange-400 */
+    --color-accent-foreground: rgb(15 23 42);
+    --color-background: rgb(15 23 42); /* slate-900 */
+    --color-foreground: rgb(248 250 252); /* slate-50 */
+    --color-muted: rgb(30 41 59); /* slate-800 */
+    --color-muted-foreground: rgb(148 163 184); /* slate-400 */
+    --color-border: rgb(51 65 85); /* slate-700 */
+    --color-ring: rgb(96 165 250); /* blue-400 */
+    --color-card: rgb(30 41 59); /* slate-800 */
+    --color-card-foreground: rgb(248 250 252);
+    --color-destructive: rgb(248 113 113); /* red-400 */
+    --color-destructive-foreground: rgb(15 23 42);
+  }
+}
+
+@utility btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  transition: color 150ms;
+}
+
+@utility btn-primary {
+  background-color: var(--color-primary);
+  color: white;
+  &:hover {
+    background-color: rgb(59 130 246 / 0.9);
+  }
+}
+
+@utility btn-secondary {
+  background-color: var(--color-secondary);
+  color: white;
+  &:hover {
+    background-color: rgb(100 116 139 / 0.9);
+  }
+}
+
+@utility btn-outline {
+  border: 1px solid var(--color-border);
+  background-color: transparent;
+  &:hover {
+    background-color: var(--color-muted);
+  }
+}
+
+@utility input {
+  display: flex;
+  height: 2.5rem;
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-background);
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  &::placeholder {
+    color: var(--color-muted-foreground);
+  }
+  &:focus-visible {
+    outline: none;
+    ring: 2px solid var(--color-ring);
+    ring-offset: 2px;
+  }
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}
+
+@utility card {
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-background);
+  padding: 1rem;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

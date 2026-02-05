@@ -1,0 +1,22 @@
+name: Preview Deployment
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: npx doswiftly deploy run --type PREVIEW --branch ${{ github.head_ref }}
+        env:
+          DOSWIFTLY_DEPLOY_TOKEN: ${{ secrets.DOSWIFTLY_DEPLOY_TOKEN }}
+          NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
+          NEXT_PUBLIC_SHOP_SLUG: ${{ secrets.NEXT_PUBLIC_SHOP_SLUG }}

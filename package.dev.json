@@ -1,0 +1,30 @@
+{
+  "name": "test-storefront",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@doswiftly/commerce-sdk": "file:../../../commerce-sdk",
+    "graphql-request": "^7.1.2",
+    "graphql": "^16.10.0",
+    "next": "latest",
+    "react": "^19",
+    "react-dom": "^19",
+    "lucide-react": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "typescript": "latest",
+    "@tailwindcss/postcss": "latest",
+    "tailwindcss": "latest",
+    "eslint": "latest",
+    "eslint-config-next": "latest"
+  }
+}

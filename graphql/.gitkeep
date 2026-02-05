@@ -1,0 +1,31 @@
+# Custom GraphQL Queries
+
+Place your custom GraphQL queries here. These will be picked up by codegen and generate TypeScript types.
+
+## Examples
+
+See `products.example.ts` and `collections.example.ts` for examples of custom queries.
+
+To use the examples:
+1. Rename `products.example.ts` to `products.ts`
+2. Rename `collections.example.ts` to `collections.ts`
+3. Run `pnpm run codegen` to generate types
+
+## When to use custom queries vs backend operations
+
+**Use backend operations** (from `@doswiftly/storefront-operations`):
+- For standard CRUD operations (Shop, Product, Cart, Customer)
+- When you need the full object with all fields
+- For consistency across all storefronts
+
+**Use custom queries** (in this directory):
+- When you need specific fields only (performance optimization)
+- For custom filtering or sorting logic
+- For combining multiple queries
+- For storefront-specific features
+
+## File naming
+
+- Use descriptive names: `products.ts`, `collections.ts`, `cart.ts`
+- Use `.ts` or `.tsx` extension
+- Export queries using `gql` tag from `graphql-tag`

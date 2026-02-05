@@ -1,0 +1,7 @@
+{
+  "name": "test-cfbuilds",
+  "description": "DoSwiftly storefront template: test-cfbuilds",
+  "uiLibrary": "shadcn/ui",
+  "features": [],
+  "version": "0.1.0"
+}

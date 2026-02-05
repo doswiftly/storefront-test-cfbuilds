@@ -1,0 +1,44 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Next.js
+.next/
+out/
+
+# Build
+dist/
+build/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Local development config (not committed - contains real shop values)
+doswiftly.config.ts
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# DoSwiftly cache
+.doswiftly/
+
+# TypeScript
+*.tsbuildinfo
+
+# Testing
+coverage/
